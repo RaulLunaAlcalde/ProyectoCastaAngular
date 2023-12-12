@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './condicions.component.html',
-  styleUrl: './condicions.component.css'
+  styleUrls: ['./condicions.component.css']
 })
 export class CondicionsComponent {
 
