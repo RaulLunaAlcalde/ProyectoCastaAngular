@@ -1,0 +1,143 @@
+/* Barra de menú */
+body {
+  font-family: Gabarito; /* Usar la fuente adecuada aquí */
+  margin: 0;
+  padding: 0;
+}
+h1 a{
+  text-decoration: none;
+  color: white;
+  font-family: Gabarito;
+}
+h1 a:hover{
+  text-decoration: none;
+  color: #dc821e;
+}
+h2{
+  color: #C3896E;
+}
+
+.menu-bar {
+  background-color: #4F5D69; /* Azul pastel claro */
+  color: #fff; /* Color de letra blanco */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Sección izquierda (Título) */
+.left-section {
+  margin-right: 20px;
+}
+
+/* Sección central (Enlaces) */
+.center-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.center-section ul li {
+  margin-right: 70px; /* Aumentamos el espacio entre los elementos */
+}
+
+.center-section ul li:last-child {
+  margin-right: 0; /* Dejamos el último elemento sin espacio derecho */
+}
+
+.center-section ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s; /* Agregamos una transición de color suave */
+}
+
+.center-section ul li a:hover {
+  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
+}
+
+/* Sección derecha (Botón de inicio de sesión) */
+.right-section .login-button {
+  background-color: transparent;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s; /* Agregamos una transición de color suave */
+}
+
+.right-section .login-button:hover {
+  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
+}
+
+.right-section .login-button i {
+  margin-right: 5px;
+}
+
+/*FOOTER*/
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 5em;
+  align-items: center;
+}
+
+/* Estilo para los iconos */
+.footer-icons {
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* Estilo para los enlaces de redes sociales */
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+}
+i{color: white; text-decoration: none }
+a.footer-social{color: transparent; margin: 1em}
+
+.centrar-horizontal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em;
+}
+h1, h2, p{
+  text-align: center;
+}
+/*FOOTER*/
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 5em;
+  align-items: center;
+}
+
+/* Estilo para los iconos */
+.footer-icons {
+  font-size: 24px;
+  margin: 10px;
+}
+
+/* Estilo para los enlaces de redes sociales */
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+}
+i{color: white; text-decoration: none }
+a.footer-social{color: transparent; margin: 1em}
+p{
+  margin: 2em;
+}
