@@ -22,7 +22,7 @@ html {
   padding: 1em;
   color: black;
   text-align: center;
-  font-family: fcb-bold, Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: 'fcb-bold', Arial, 'Helvetica Neue', Helvetica, sans-serif;
   opacity: 0.8;
   margin-top: 3em;
 }

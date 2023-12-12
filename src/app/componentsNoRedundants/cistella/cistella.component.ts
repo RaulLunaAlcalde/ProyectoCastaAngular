@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-cistella',
   standalone: true,
   imports: [],
-  templateUrl: './cistella.component.html',
+  templateUrl: './cistella.component.css',
   styleUrl: './cistella.component.css'
 })
 export class CistellaComponent {

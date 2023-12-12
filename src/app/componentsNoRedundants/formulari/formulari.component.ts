@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './formulari.component.css'
 })
 export class FormulariComponent {
-
+  imagePath: string
+  constructor() {
+    this.imagePath = 'assets/CastaEscudo.png'
+  }
 }
