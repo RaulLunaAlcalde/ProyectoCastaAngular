@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-cataleg',
   standalone: true,
   imports: [],
-  templateUrl: './cataleg.component.css',
+  templateUrl: './cataleg.component.html',
   styleUrl: './cataleg.component.css'
 })
 export class CatalegComponent {
