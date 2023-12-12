@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CondicionsComponent } from './condicions/condicions.component';
 import { FormulariComponent } from './formulari/formulari.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: 'condicions', component: CondicionsComponent },
   { path: 'formulari', component: FormulariComponent },
 ];
