@@ -4,12 +4,13 @@ import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-index',
   standalone: true,
-    imports: [
-        RouterLink
-    ],
+  imports: [RouterLink],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
 export class IndexComponent {
-
+  imagePath: string
+  constructor() {
+    this.imagePath = '../assets/CastaEscudo.png'
+  }
 }
