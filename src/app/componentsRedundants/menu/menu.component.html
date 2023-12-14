@@ -1,18 +1,21 @@
-<p>menu works!</p>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Gabarito' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Index</title>
+</head>
 <div class="menu-bar">
   <div class="left-section">
-    <h1><a href="Index.html">Casta FC</a></h1>
+    <h1><a routerLink="/">Casta FC</a></h1>
   </div>
   <div class="center-section">
     <ul>
-      <li><a href="../../condicions/condicions.component.html">Condicions</a></li>
-      <li><a href="Formulari_Registre.html">Formulari</a></li>
-      <li><a href="ContacteFormulari.html">Contacte</a></li>
-      <li><a href="pagina_cataleg.html">Catàleg</a></li>
+      <li><a routerLink="/cataleg">Catàleg</a></li>
+      <li><a routerLink="/condicions">Condicions</a></li>
+      <li><a routerLink="/contacte">Contacte</a></li>
     </ul>
   </div>
   <div class="right-section">
-    <a href="Formulari_Registre.html" class="login-button">
+    <a routerLink="formulari_inici_sessio" class="login-button">
       <i class="fas fa-sign-in-alt"></i> Iniciar Sessió
     </a>
   </div>

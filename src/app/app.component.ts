@@ -11,8 +11,5 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 })
 export class AppComponent {
   title = 'ProyectoCastaAngular';
-  imagePath: string
-  constructor() {
-    this.imagePath = 'assets/CastaEscudo.png'
-  }
+
 }
