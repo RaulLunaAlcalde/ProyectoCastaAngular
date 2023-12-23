@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CondicionsComponent } from './componentsNoRedundants/condicions/condicions.component';
 import { FormulariComponent } from './componentsNoRedundants/formulari/formulari.component';
-import {IndexComponent} from "./index/index.component";
+import {IndexComponent} from "./componentsNoRedundants/index/index.component";
 import {ContacteComponent} from "./componentsNoRedundants/contacte/contacte.component";
 import {CatalegComponent} from "./componentsNoRedundants/cataleg/cataleg.component";
 

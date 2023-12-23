@@ -1,128 +1,33 @@
-/* Paginas */
-/* Inicio menu */
-body {
-  font-family: Gabarito; /* Usar la fuente adecuada aquí */
-  margin: 0;
-  padding: 0;
-}
-h1 a{
-  text-decoration: none;
-  color: white;
-  font-family: Gabarito;
-}
-h1 a:hover{
-  text-decoration: none;
-  color: #dc821e;
-}
-h2{
-  color: #C3896E;
-}
-
-
-.menu-bar {
-  background-color: #4F5D69; /* Azul pastel claro */
-  color: #fff; /* Color de letra blanco */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-/* Sección izquierda (Título) */
-.left-section {
-  margin-right: 20px;
-}
-
-/* Sección central (Enlaces) */
-.center-section ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
-.center-section ul li {
-  margin-right: 70px; /* Aumentamos el espacio entre los elementos */
-}
-
-.center-section ul li:last-child {
-  margin-right: 0; /* Dejamos el último elemento sin espacio derecho */
-}
-
-.center-section ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s; /* Agregamos una transición de color suave */
-}
-
-.center-section ul li a:hover {
-  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
-}
-
-/* Sección derecha (Botón de inicio de sesión) */
-.right-section .login-button {
-  background-color: transparent;
-  text-decoration: none;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s; /* Agregamos una transición de color suave */
-}
-
-.right-section .login-button:hover {
-  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
-}
-
-.right-section .login-button i {
-  margin-right: 5px;
-}
-/*fin menu*/
-
-.wrapper{
+.wrapper {
   width: 90%;
   margin: 0 auto;
   max-width: 80rem;
 }
 
-.cols{
-  display: -webkit-box;
-  display: -ms-flexbox;
+.cols {
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
-.col{
+.col {
   width: calc(25% - 2rem);
   margin: 1rem;
   cursor: pointer;
 }
 
-.container{
-  -webkit-transform-style: preserve-3d;
+.container {
   transform-style: preserve-3d;
-  -webkit-perspective: 1000px;
   perspective: 1000px;
 }
 
 .front,
-.back{
+.back {
   background-size: cover;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   background-position: center;
-  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -webkit-backface-visibility: hidden;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
   backface-visibility: hidden;
   text-align: center;
   min-height: 280px;
@@ -130,181 +35,109 @@ h2{
   border-radius: 10px;
   color: #fff;
   font-size: 1.5rem;
+  position: relative;
 }
 
-.back{
-  background: #cedce7;
-  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+.back {
+  background: linear-gradient(45deg, #cedce7 0%, #596a72 100%);
 }
 
-.front:after{
+.front:after {
+  content: '';
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  width: 100%;
-  height: 100%;
-  content: '';
-  display: block;
-  opacity: .6;
+  opacity: 0.6;
   background-color: #000;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 10px;
 }
+
 .container:hover .front,
-.container:hover .back{
-  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+.container:hover .back {
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-.back{
+.back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.inner{
-  -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+.inner {
   transform: translateY(-50%) translateZ(60px) scale(0.94);
   top: 50%;
   position: absolute;
   left: 0;
   width: 100%;
   padding: 2rem;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: 1px solid transparent;
-  -webkit-perspective: inherit;
   perspective: inherit;
   z-index: 2;
 }
 
-.container .back{
-  -webkit-transform: rotateY(180deg);
+.container .back {
   transform: rotateY(180deg);
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-.container .front{
-  -webkit-transform: rotateY(0deg);
+.container .front {
+  transform-style: preserve-3d;
+}
+
+.container:hover .back {
   transform: rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
-.container:hover .back{
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-
-.container:hover .front{
-  -webkit-transform: rotateY(-180deg);
+.container:hover .front {
   transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
-.front .inner p{
+.front .inner p {
   font-size: 2rem;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.front .inner p:after{
+.front .inner p:after {
   content: '';
   width: 4rem;
   height: 2px;
   position: absolute;
   background: #C6D4DF;
   display: block;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  bottom: -.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -0.75rem;
 }
 
-.front .inner span{
-  color: rgba(255,255,255,0.7);
+.front .inner span {
+  color: rgba(255, 255, 255, 0.7);
   font-family: 'Montserrat';
   font-weight: 300;
 }
 
-
-@media screen and (max-width: 64rem){
-  .col{
+@media screen and (max-width: 64rem) {
+  .col {
     width: calc(33.333333% - 2rem);
   }
 }
 
-@media screen and (max-width: 48rem){
-  .col{
+@media screen and (max-width: 48rem) {
+  .col {
     width: calc(50% - 2rem);
   }
 }
 
-@media screen and (max-width: 32rem){
-  .col{
+@media screen and (max-width: 32rem) {
+  .col {
     width: 100%;
     margin: 0 0 2rem 0;
   }
 }
-/*FOOTER*/
 
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 5em;
-  align-items: center;
-}
-
-/* Estilo para los iconos */
-.footer-icons {
-  font-size: 24px;
-  margin: 10px;
-}
-
-/* Estilo para los enlaces de redes sociales */
-.footer-social a {
-  color: #fff;
-  text-decoration: none;
-  margin: 10px;
-}
-i{color: white; text-decoration: none }
-a.footer-social{color: transparent; margin: 1em}/* Resto de estilos para tabletas o pantallas más pequeñas */
-
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column; /* Apilamos los elementos en columnas */
-    text-align: center; /* Centramos el texto */
-  }
-
-  #titol {
-    margin-top: 10px; /* Añadimos un margen superior */
-  }
-
-  #menu ul li {
-    display: block;
-    text-align: center; /* Centramos los elementos del menú */
-    padding: 10px 0; /* Añadimos espacio alrededor del enlace */
-  }
-
-  .producto,
-  .producto1 {
-    display: block;  /*Cambiamos a bloque para que se apilen en columnas */
-    margin: 1em auto; /* Centramos los productos */
-    text-align: center; /* Centramos el contenido */
-  }
-}

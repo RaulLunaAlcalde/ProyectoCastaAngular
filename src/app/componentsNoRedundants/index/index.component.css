@@ -1,65 +1,38 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
 
-
-/*FOOTER*/
-
-.footer {
-  background-color: #333;
-  color: #fff;
+#contenido {
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1, h2 {
   text-align: center;
-  margin-top: 5em;
-  align-items: center;
+  color: #423e3e;
 }
 
-/* Estilo para los iconos */
-.footer-icons {
-  font-size: 24px;
-  margin: 10px;
-}
-
-/* Estilo para los enlaces de redes sociales */
-.footer-social a {
-  color: #fff;
-  text-decoration: none;
-  margin: 10px;
-}
-i{color: white; text-decoration: none }
-a.footer-social{color: transparent; margin: 1em}
-
-.centrar-horizontal{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2em;
-}
-h1, h2, p{
+.centrar-horizontal {
   text-align: center;
 }
-/*FOOTER*/
 
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 5em;
-  align-items: center;
+img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-/* Estilo para los iconos */
-.footer-icons {
-  font-size: 24px;
-  margin: 10px;
-}
-
-/* Estilo para los enlaces de redes sociales */
-.footer-social a {
-  color: #fff;
-  text-decoration: none;
-  margin: 10px;
-}
-i{color: white; text-decoration: none }
-a.footer-social{color: transparent; margin: 1em}
-p{
-  margin: 2em;
+p {
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
 }

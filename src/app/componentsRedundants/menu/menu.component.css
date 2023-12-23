@@ -1,79 +1,70 @@
-/* Barra de menú */
-body {
-  font-family: Gabarito; /* Usar la fuente adecuada aquí */
-  margin: 0;
-  padding: 0;
-}
-h1 a{
-  text-decoration: none;
-  color: white;
-  font-family: Gabarito;
-}
-h1 a:hover{
-  text-decoration: none;
-  color: #dc821e;
-}
-h2{
-  color: #C3896E;
-}
-
+/* Estilo para la barra de menú */
 .menu-bar {
-  background-color: #4F5D69; /* Azul pastel claro */
-  color: #fff; /* Color de letra blanco */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  background-color: #757575; /* Color de fondo de la barra de menú (gris) */
+  padding: 10px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin: 10px; /* Márgenes para separar la barra del borde de la pantalla */
 }
 
-/* Sección izquierda (Título) */
-.left-section {
-  margin-right: 20px;
+/* Estilo para la sección izquierda del menú */
+.left-section h1 {
+  margin: 0;
+  color: #fff; /* Color del texto (blanco) */
 }
 
-/* Sección central (Enlaces) */
+.left-section a {
+  text-decoration: none;
+}
+
+/* Estilo para la sección central del menú */
 .center-section ul {
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
   padding: 0;
-  display: flex;
 }
 
-.center-section ul li {
-  margin-right: 70px; /* Aumentamos el espacio entre los elementos */
+.center-section li {
+  display: inline-block;
+  margin-right: 30px; /* Más separación entre elementos del menú */
+  transition: transform 0.3s, color 0.3s; /* Transiciones para el efecto de ampliación y cambio de color */
 }
 
-.center-section ul li:last-child {
-  margin-right: 0; /* Dejamos el último elemento sin espacio derecho */
-}
-
-.center-section ul li a {
+.center-section a {
   text-decoration: none;
-  color: #fff;
+  color: #fff; /* Color del texto (blanco) */
   font-weight: bold;
-  transition: color 0.3s; /* Agregamos una transición de color suave */
 }
 
-.center-section ul li a:hover {
-  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
+.center-section a:hover {
+  color: #e7893c;
 }
 
-/* Sección derecha (Botón de inicio de sesión) */
-.right-section .login-button {
-  background-color: transparent;
+  /* Efecto de ampliación y cambio de color al pasar el ratón sobre un elemento del menú */
+.center-section li:hover {
+  transform: scale(1.1);
+  color: #e7893c; /* Color de texto naranja al pasar el ratón sobre el elemento */
+}
+
+/* Estilo para la sección derecha del menú */
+.right-section a {
   text-decoration: none;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
+  color: #fff; /* Color del texto (blanco) */
+  background-color: #2ecc71; /* Color de fondo del botón de inicio de sesión */
+  padding: 8px 15px;
+  border-radius: 5px; /* Bordes redondeados */
   display: flex;
   align-items: center;
-  transition: color 0.3s; /* Agregamos una transición de color suave */
+  transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
 }
 
-.right-section .login-button:hover {
-  color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
+.right-section a:hover {
+  background-color: #e74c3c; /* Color de fondo naranja al pasar el ratón sobre el botón de inicio de sesión */
 }
 
-.right-section .login-button i {
+.right-section i {
   margin-right: 5px;
 }
