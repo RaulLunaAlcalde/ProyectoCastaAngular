@@ -133,7 +133,7 @@ input {
   border: white;
   &:hover {
     background: white;
-    color: whitesmoke;
+    color: black;
     border: solid darkorange;
   }
 }

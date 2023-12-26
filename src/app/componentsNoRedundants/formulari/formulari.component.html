@@ -1,15 +1,4 @@
-<p>formulari works!</p>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link href="./formulari.component.scss" type="text/css" rel="stylesheet" >
-</head>
-<body>
-
-<form>
+<form ngForm>
   <section>
     <div class='left'>
       <!--foto provisional-->
@@ -20,14 +9,8 @@
   <div class='right'>
     <h2>Crea un compte</h2>
 
-    <label>Nom:</label><br>
-    <input type='Name' placeholder=''required>
-    <br>
-    <label>Cognom:</label><br>
-    <input type='Name' required>
-    <br>
-    <label>Nom Usuari:</label><br>
-    <input type='text'>
+    <label>Usuari:</label><br>
+    <input [(ngModel)]="username" placeholder="Introdueix l'usuari" name="user">
     <br>
     <label>Email:</label><br>
     <input type='email' required>
@@ -35,8 +18,8 @@
     <label>Contrasenya:</label><br>
     <input type='password'>
     <br><br>
-    <Button class='btn2'>Logar-se</Button>
+    <Button (click)="onUsernameChange()">Registrar-se</Button>
+    <p>Usuarios: {{ users | json }}</p>
   </div>
 </form>
-</body>
-</html>
+

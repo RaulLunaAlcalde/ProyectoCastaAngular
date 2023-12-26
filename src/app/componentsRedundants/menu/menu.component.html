@@ -1,3 +1,5 @@
+<!-- menu.component.html -->
+
 <div class="menu-bar">
   <div class="left-section">
     <h1><a routerLink="/">Casta FC</a></h1>
@@ -10,8 +12,14 @@
     </ul>
   </div>
   <div class="right-section">
-    <a routerLink="formulari_inici_sessio" class="login-button">
-      <i class="fas fa-sign-in-alt"></i> Iniciar Sessió
-    </a>
+    <ng-container *ngIf="currentUser; else loginButton">
+      <span>{{ currentUser }}</span>
+    </ng-container>
+    <ng-template #loginButton>
+      <a routerLink="/formulari" class="login-button">
+        <i class="fas fa-sign-in-alt"></i> Iniciar Sessió
+      </a>
+    </ng-template>
   </div>
 </div>
+
