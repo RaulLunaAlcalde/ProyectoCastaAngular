@@ -1,38 +1,23 @@
-<p>formulari-inici-sessio works!</p>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link href="formulari-inici-sessio.component.css" type="text/css" rel="stylesheet" >
-</head>
-<body>
-
 <form>
   <section>
     <div class='left'>
 
       <h2>Log-In</h2>
       <br>
-      <label>Nom Usuari:</label><br>
-      <input type='Name' placeholder=''required>
-      <br>
-      <label>Contrasenya:</label><br>
-      <input type='password'>
-      <br>
       <label>Email:</label><br>
-      <input type='email' required>
+      <input [(ngModel)]="email" name="email" placeholder="Introduce el email" type='email' required>
       <br>
+      <label>Contraseña:</label><br>
+      <input [(ngModel)]="password" name="password" placeholder="Introduce la contraseña" type='password' required>
       <br><br>
-      <Button class='btn2'>Logar-se</Button>
+      <button type="submit">Iniciar sesión</button>
     </div>
   </section>
   <div class='right'>
     <!--foto provisional-->
-    <img src="../../../assets/CastaEscudo.png" width="50%">
-    <p>Vols ser un Hooligan? Uneix-te a Nosaltres!! <br><br><Button class='btn2'><a href="Formulari_Registre.html"> Crear un compte</a></Button></p>
+    <img [src]="imagePath" width="15%" alt="">
+    <p>Vols ser un Hooligan? Uneix-te a Nosaltres!! <br><br>
+      <Button class='btn2'><a routerLink="/formulari"> Crear un compte</a></Button></p>
   </div>
 </form>
-</body>
-</html>
+

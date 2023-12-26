@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import {FormsModule} from "@angular/forms";
 import {JsonPipe} from "@angular/common";
+import {EmailService} from "../../email.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-formulari',
   standalone: true,
-  imports: [
-    FormsModule,
-    JsonPipe
-  ],
+    imports: [
+        FormsModule,
+        JsonPipe,
+        RouterLink
+    ],
   templateUrl: './formulari.component.html',
   styleUrl: './formulari.component.css'
 })
