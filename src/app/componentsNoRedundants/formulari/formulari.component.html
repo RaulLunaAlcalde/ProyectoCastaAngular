@@ -1,4 +1,4 @@
-<form ngForm>
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
   <section>
     <div class='left'>
       <!--foto provisional-->
@@ -9,17 +9,13 @@
   <div class='right'>
     <h2>Crea un compte</h2>
 
-    <label>Usuari:</label><br>
-    <input [(ngModel)]="username" placeholder="Introdueix l'usuari" name="user">
-    <br>
     <label>Email:</label><br>
-    <input type='email' required>
+    <input [(ngModel)]="email" name="email" placeholder="Introduce el email" type='email' required>
     <br>
-    <label>Contrasenya:</label><br>
-    <input type='password'>
+    <label>Contraseña:</label><br>
+    <input [(ngModel)]="password" name="password" placeholder="Introduce la contraseña" type='password' required>
     <br><br>
-    <Button (click)="onUsernameChange()">Registrar-se</Button>
-    <p>Usuarios: {{ users | json }}</p>
+    <button type="submit">Registrarse</button>
   </div>
 </form>
 

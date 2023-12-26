@@ -14,27 +14,22 @@ import {JsonPipe} from "@angular/common";
 })
 export class FormulariComponent {
   imagePath: string
-  users: string[] = [];
-  username: string = '';
+  email: string = '';
+  password: string = '';
 
   constructor() {
     this.imagePath = 'assets/CastaEscudo.png'
-    const storedUsers = localStorage.getItem('users');
-    if (storedUsers) {
-      this.users = storedUsers.split(',');
+  }
+  onSubmit() {
+    if (this.email.trim() !== '' && this.password.trim() !== '') {
+      // Guardar en localStorage usando el correo electrónico como clave
+      localStorage.setItem(this.email, this.password);
     }
+    // Limpiar los campos después de guardar
+    this.email = '';
+    this.password = '';
   }
 
-  onUsernameChange() {
-    if (this.username.trim() !== '') {
-      this.users.push(this.username);
-      this.updateLocalStorage();
-    }
-    this.username = '';
-  }
 
-  private updateLocalStorage() {
-    localStorage.setItem('users', this.users.join(','));
-  }
 
 }
