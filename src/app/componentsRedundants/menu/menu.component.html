@@ -12,8 +12,8 @@
     </ul>
   </div>
   <div class="right-section">
-    <ng-container *ngIf="emailService.email; else loginButton">
-      <span>{{ emailService.email }}</span>
+    <ng-container *ngIf="emailService.isLoggedIn(); else loginButton">
+      <span>Bienvenido {{ emailService.email }}</span>
     </ng-container>
     <ng-template #loginButton>
       <a routerLink="/formulari" class="login-button">

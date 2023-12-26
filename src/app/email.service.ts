@@ -35,6 +35,14 @@ export class EmailService {
   }
   validateCredentials(email: string, password: string): boolean {
     const storedPassword = localStorage.getItem(email);
-    return storedPassword !== null && storedPassword === password;
+    if (storedPassword !== null && storedPassword === password) {
+      this._email = email; // Establecer el email actual
+      return true;
+    }
+    return false;
+  }
+
+  isLoggedIn(): boolean {
+    return this._email !== '';
   }
 }
