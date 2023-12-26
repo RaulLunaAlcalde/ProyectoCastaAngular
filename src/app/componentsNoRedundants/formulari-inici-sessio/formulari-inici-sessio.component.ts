@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {EmailService} from "../../email.service";
 import {FormsModule} from "@angular/forms";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-formulari-inici-sessio',
@@ -17,18 +19,22 @@ export class FormulariIniciSessioComponent {
   imagePath: string
   email: string = '';
   password: string = '';
-  constructor(public emailService : EmailService) {
+  constructor(public emailService : EmailService, private router: Router) {
     this.imagePath = 'assets/CastaEscudo.png'
   }
   onSubmit() {
-    const user = this.emailService.getUser(this.email);
-    const password = this.emailService.getPassword(this.password)
-
-    if (password == this.password) {
-      // La combinación de email y contraseña es válida
-      console.log('Inicio de sesión exitoso');
-    } else {
-      console.log('Credenciales incorrectas');
+    if (this.email.trim() !== '' && this.password.trim() !== '') {
+      // Validar las credenciales utilizando el servicio
+      if (this.emailService.validateCredentials(this.email, this.password)) {
+        // Credenciales correctas, redirigir a la página principal
+        this.router.navigate(['/']);
+      } else {
+        // Credenciales incorrectas, realizar alguna acción (puedes mostrar un mensaje de error)
+        console.log("Error")
+      }
     }
+    // Limpiar los campos después de validar
+    this.email = '';
+    this.password = '';
   }
 }

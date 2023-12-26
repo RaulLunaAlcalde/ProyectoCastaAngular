@@ -33,4 +33,8 @@ export class EmailService {
     // Devolverá null si no se encuentra el usuario
     return localStorage.getItem(password);
   }
+  validateCredentials(email: string, password: string): boolean {
+    const storedPassword = localStorage.getItem(email);
+    return storedPassword !== null && storedPassword === password;
+  }
 }
