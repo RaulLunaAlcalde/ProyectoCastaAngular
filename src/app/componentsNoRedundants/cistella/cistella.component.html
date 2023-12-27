@@ -1,12 +1,8 @@
 <app-menu></app-menu>
 <div id="body2">
-  <h1>La teva cistella de compres</h1>
-
-  <p>Producte 1: Quantitat 2 - Total: $39.98</p>
-  <p>Producte 2: Quatintat 1 - Total: $24.99</p>
-  <p>Total: $64.97</p>
-  <form action="pagina_cataleg.html">
-    <button type="submit">Tornar al Catàleg</button>
-  </form>
+  <h2>Productos en la Cesta</h2>
+  <div *ngFor="let producto of productosEnCarrito">
+    <p>{{ producto.nombre }} - Cantidad: {{ producto.cantidad }} - Precio: {{ producto.precio * producto.cantidad }} €</p>
+  </div>
 </div>
 <app-footer></app-footer>

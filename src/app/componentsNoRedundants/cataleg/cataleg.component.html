@@ -6,6 +6,7 @@
     <div class="producto">
       <img [src]="producto.imagen" alt="{{ producto.nombre }}">
       <p>{{ producto.descripcion }}</p>
+      <p>Precio: {{ producto.precio }} €</p>
       <select [(ngModel)]="producto.cantidad">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -18,6 +19,7 @@
     <div class="producto">
       <img [src]="producto.imagen" alt="{{ producto.nombre }}">
       <p>{{ producto.descripcion }}</p>
+      <p>Precio: {{ producto.precio }} €</p>
       <select [(ngModel)]="producto.cantidad">
         <option value="1">1</option>
         <option value="2">2</option>
