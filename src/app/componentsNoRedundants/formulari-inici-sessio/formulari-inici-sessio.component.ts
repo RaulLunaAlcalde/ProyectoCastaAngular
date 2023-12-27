@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
-import {EmailService} from "../../email.service";
-import {FormsModule} from "@angular/forms";
 import { Router } from '@angular/router';
-
+import { EmailService } from "../../email.service";
+import { FormsModule } from "@angular/forms";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-formulari-inici-sessio',
@@ -19,9 +18,11 @@ export class FormulariIniciSessioComponent {
   imagePath: string
   email: string = '';
   password: string = '';
-  constructor(public emailService : EmailService, private router: Router) {
+
+  constructor(public emailService: EmailService, private router: Router) {
     this.imagePath = 'assets/CastaEscudo.png'
   }
+
   onSubmit() {
     if (this.email.trim() !== '' && this.password.trim() !== '') {
       // Validar las credenciales utilizando el servicio
@@ -29,10 +30,14 @@ export class FormulariIniciSessioComponent {
         // Credenciales correctas, redirigir a la página principal
         this.router.navigate(['/']);
       } else {
-        // Credenciales incorrectas, realizar alguna acción (puedes mostrar un mensaje de error)
-        console.log("Error")
+        // Credenciales incorrectas, mostrar un mensaje de error
+        alert("Usuari o contrasenya incorrectes");
       }
+    } else {
+      // Mostrar un mensaje de error si algún campo está vacío
+      alert("Siusplau, emplena tots els camps");
     }
+
     // Limpiar los campos después de validar
     this.email = '';
     this.password = '';
