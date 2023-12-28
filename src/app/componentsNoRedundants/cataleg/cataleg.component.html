@@ -1,35 +1,20 @@
+<!-- cataleg.component.html -->
+
 <app-menu></app-menu>
-<!-- catalogo.component.html -->
-<!-- catalogo.component.html -->
+
 <div class="catalogo-wrapper">
   <div *ngFor="let producto of productos" class="columna">
     <div class="producto">
       <img [src]="producto.imagen" alt="{{ producto.nombre }}">
       <p>{{ producto.descripcion }}</p>
       <p>Precio: {{ producto.precio }} €</p>
-      <select [(ngModel)]="producto.cantidad">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-      <button (click)="agregarACarrito(producto)">Afegir a la cistella</button>
-    </div>
-  </div>
-  <div *ngFor="let producto of productos" class="columna">
-    <div class="producto">
-      <img [src]="producto.imagen" alt="{{ producto.nombre }}">
-      <p>{{ producto.descripcion }}</p>
-      <p>Precio: {{ producto.precio }} €</p>
-      <select [(ngModel)]="producto.cantidad">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-      <button (click)="agregarACarrito(producto)">Afegir a la cistella</button>
+      <!-- Cambio el select por un input de tipo number -->
+      <label>Cantidad:</label>
+      <input type="number" [(ngModel)]="producto.cantidad" (input)="validarCantidad($event)">
+      <button (click)="agregarACarrito(producto)">Añadir al carrito</button>
     </div>
   </div>
 </div>
-
 
 <br />
 <app-footer></app-footer>

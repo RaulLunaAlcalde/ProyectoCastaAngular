@@ -1,4 +1,5 @@
-/* catalogo.component.css */
+/* cataleg.component.css */
+
 .catalogo-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -6,8 +7,16 @@
 }
 
 .columna {
-  width: calc(33.33% - 20px);
+  width: 40%;
   margin: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.columna:hover {
+  transform: scale(1.05);
 }
 
 .producto {
@@ -15,7 +24,75 @@
 }
 
 .producto img {
-  width: 100%;
-  max-width: 200px;
+  max-width: 100%;
   height: auto;
+  border-radius: 4px;
+  margin-bottom: 6px;
 }
+
+.producto p {
+  margin-bottom: 4px;
+}
+
+.select-cantidad {
+  width: 50px;
+  margin-bottom: 4px;
+}
+
+.button-agregar {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button-agregar:hover {
+  background-color: #45a049;
+}
+
+/* Estilo para el botón de retirar del carrito */
+.button-retirar {
+  background-color: #FF3333;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button-retirar:hover {
+  background-color: #FF6666;
+}
+
+/* Estilo para el botón de disminuir cantidad */
+.button-disminuir {
+  background-color: #FF9933;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button-disminuir:hover {
+  background-color: #FFB366;
+}
+
+/* Agrega estilos adicionales según sea necesario */

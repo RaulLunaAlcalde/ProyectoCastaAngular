@@ -21,4 +21,28 @@ export class CistellaComponent {
   constructor(private carritoService: CarritoService) {
     this.productosEnCarrito = this.carritoService.obtenerCarrito();
   }
+
+  retirarDelCarrito(producto: any) {
+    const indice = this.productosEnCarrito.findIndex(p => p.nombre === producto.nombre);
+    if (indice !== -1) {
+      this.productosEnCarrito.splice(indice, 1);
+    }
+  }
+
+  disminuirCantidad(producto: any) {
+    const indice = this.productosEnCarrito.findIndex(p => p.nombre === producto.nombre);
+    if (indice !== -1) {
+      // Disminuir la cantidad, asegurándose de que no sea menor que 1
+      this.productosEnCarrito[indice].cantidad = Math.max(1, this.productosEnCarrito[indice].cantidad - 1);
+    }
+  }
+
+  actualizarCantidad(producto: any) {
+    const indice = this.productosEnCarrito.findIndex(p => p.nombre === producto.nombre);
+    if (indice !== -1) {
+      // Asegúrate de que la cantidad no sea menor que 1
+      this.productosEnCarrito[indice].cantidad = Math.max(1, this.productosEnCarrito[indice].cantidad);
+    }
+  }
+
 }

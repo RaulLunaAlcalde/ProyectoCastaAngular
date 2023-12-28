@@ -1,30 +1,26 @@
-import {Component, OnInit} from '@angular/core';
-import {RouterLink} from "@angular/router";
-// @ts-ignore
-import {UserService} from "./user.service";
+import { Component, OnInit } from '@angular/core';
+import { EmailService } from "../../email.service";
 import {NgIf} from "@angular/common";
-import {EmailService} from "../../email.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-    imports: [
-        RouterLink,
-        NgIf
-    ],
+  imports: [
+    RouterLink,
+    NgIf
+  ],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit {
 
-    constructor(public emailService: EmailService) {
-        // Puedes acceder al email aquí
-        const email = this.emailService.email;
-        console.log('Email compartido:', email);
-    }
+  constructor(public emailService: EmailService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
-
+  logOut(): void {
+    // Llamar al método logOut del servicio al hacer clic en el botón de cierre de sesión
+    this.emailService.logOut();
   }
 }

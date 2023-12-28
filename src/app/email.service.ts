@@ -42,6 +42,12 @@ export class EmailService {
     return false;
   }
 
+  logOut(): void {
+    // Limpiar las credenciales al cerrar sesión
+    this._email = '';
+    this._password = '';
+  }
+
   isLoggedIn(): boolean {
     return this._email !== '';
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  constructor() {
+
+  }
+
+  @ViewChild('facebookIcon') facebookIcon!: ElementRef;
+  @ViewChild('twitterIcon') twitterIcon!: ElementRef;
+  @ViewChild('instagramIcon') instagramIcon!: ElementRef;
+
 }
+

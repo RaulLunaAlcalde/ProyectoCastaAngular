@@ -3,17 +3,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #757575; /* Color de fondo de la barra de menú (gris) */
+  background-color: #757575;
   padding: 10px;
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  margin: 10px; /* Márgenes para separar la barra del borde de la pantalla */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
 
 /* Estilo para la sección izquierda del menú */
 .left-section h1 {
   margin: 0;
-  color: #fff; /* Color del texto (blanco) */
+  color: #fff;
 }
 
 .left-section a {
@@ -21,21 +21,27 @@
 }
 
 /* Estilo para la sección central del menú */
+.center-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .center-section ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .center-section li {
-  display: inline-block;
-  margin-right: 30px; /* Más separación entre elementos del menú */
-  transition: transform 0.3s, color 0.3s; /* Transiciones para el efecto de ampliación y cambio de color */
+  margin-right: 30px;
+  transition: transform 0.3s, color 0.3s;
 }
 
 .center-section a {
   text-decoration: none;
-  color: #fff; /* Color del texto (blanco) */
+  color: #fff;
   font-weight: bold;
 }
 
@@ -43,28 +49,57 @@
   color: #e7893c;
 }
 
-  /* Efecto de ampliación y cambio de color al pasar el ratón sobre un elemento del menú */
 .center-section li:hover {
   transform: scale(1.1);
-  color: #e7893c; /* Color de texto naranja al pasar el ratón sobre el elemento */
+  color: #e7893c;
 }
 
 /* Estilo para la sección derecha del menú */
-.right-section a {
-  text-decoration: none;
-  color: #fff; /* Color del texto (blanco) */
-  background-color: #2ecc71; /* Color de fondo del botón de inicio de sesión */
-  padding: 8px 15px;
-  border-radius: 5px; /* Bordes redondeados */
+.right-section {
   display: flex;
   align-items: center;
-  transition: background-color 0.3s; /* Transición para el cambio de color de fondo */
+}
+
+.right-section a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #2ecc71;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s;
 }
 
 .right-section a:hover {
-  background-color: #e74c3c; /* Color de fondo naranja al pasar el ratón sobre el botón de inicio de sesión */
+  background-color: #e74c3c;
 }
 
 .right-section i {
   margin-right: 5px;
+}
+
+/* Estilo específico para el texto de bienvenida */
+#welcome-container {
+  display: flex;
+  align-items: center;
+}
+
+#bienvenida {
+  color: white;
+  margin-right: 10px; /* Ajusta la separación entre el texto y el botón según sea necesario */
+}
+
+#tancarSessio {
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  background-color: #2ecc71;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#tancarSessio:hover {
+  background-color: #e74c3c;
 }

@@ -13,7 +13,10 @@
   </div>
   <div class="right-section">
     <ng-container *ngIf="emailService.isLoggedIn(); else loginButton">
-      <span>Bienvenido {{ emailService.email }}</span>
+      <div class="welcome-container">
+        <span id="bienvenida">Benvingut:  {{ emailService.email }}</span>
+        <button id="tancarSessio" (click)="logOut()">Cerrar Sesión</button>
+      </div>
     </ng-container>
     <ng-template #loginButton>
       <a routerLink="/formulari" class="login-button">
@@ -22,4 +25,3 @@
     </ng-template>
   </div>
 </div>
-
