@@ -78,4 +78,22 @@ input{
 input:hover {
   background-color: #cc2d89;
 }
+.Filtrar, .Ordenar{
+  padding-left: 2em;
+  font-size: 18px;
+  font-weight: bold;
+}
+.Filtrar select, .Ordenar select{
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 8px 16px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
 /* cataleg.component.css */

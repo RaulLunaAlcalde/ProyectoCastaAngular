@@ -1,14 +1,14 @@
 <!-- cataleg.component.html -->
 
 <app-menu></app-menu>
-<div>
-  <label>Filtrar por:</label>
+<div class="Filtrar">
+  <label>Filtrar por: </label>
   <select [(ngModel)]="categoriaSeleccionada" (change)="filtrarPorCategoria()">
     <option value="Todas">Todas</option>
     <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
   </select>
 </div>
-<div>
+<div class="Ordenar">
   <label>Ordenar por:</label>
   <select [(ngModel)]="ordenSeleccionado" (change)="cambiarOrden(ordenSeleccionado)">
     <option value="default">Por defecto</option>
