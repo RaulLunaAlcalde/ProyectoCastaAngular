@@ -11,13 +11,15 @@
 }
 
 /* Estilo para la sección izquierda del menú */
-.left-section h1 {
+.left-section h1 a{
   margin: 0;
   color: #fff;
+  text-decoration: none;
 }
 
-.left-section a {
+.left-section h1 a:hover {
   text-decoration: none;
+  color: #e7893c
 }
 
 /* Estilo para la sección central del menú */

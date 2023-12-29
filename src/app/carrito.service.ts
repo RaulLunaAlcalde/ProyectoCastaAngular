@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CarritoService {
-  productos: { nombre: string, cantidad: number, precio: number }[] = [];
+  productos: { nombre: string, cantidad: number, precio: number, imagen: string }[] = [];
 
-  agregarAlCarrito(producto: { nombre: string, cantidad: number, precio: number }) {
+  agregarAlCarrito(producto: { nombre: string, cantidad: number, precio: number, imagen: string }) {
     const indice = this.productos.findIndex(p => p.nombre === producto.nombre);
 
     if (indice !== -1) {
@@ -21,5 +21,8 @@ export class CarritoService {
 
   obtenerCarrito() {
     return this.productos;
+  }
+  limpiarCarrito() {
+    this.productos = [];
   }
 }

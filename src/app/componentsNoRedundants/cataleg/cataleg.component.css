@@ -12,11 +12,12 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 8px;
   border-radius: 4px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .columna:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 }
 
 .producto {
@@ -39,8 +40,8 @@
   margin-bottom: 4px;
 }
 
-.button-agregar {
-  background-color: #4CAF50;
+button {
+  background-color: #2ecc71;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -53,33 +54,14 @@
   transition: background-color 0.3s ease;
 }
 
-.button-agregar:hover {
-  background-color: #45a049;
-}
-
-/* Estilo para el botón de retirar del carrito */
-.button-retirar {
-  background-color: #FF3333;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.button-retirar:hover {
-  background-color: #FF6666;
+button:hover {
+  background-color: #ff0000;
 }
 
 /* Estilo para el botón de disminuir cantidad */
-.button-disminuir {
-  background-color: #FF9933;
-  color: white;
+input{
+  background-color: #ffffff;
+  color: black;
   border: none;
   padding: 6px 12px;
   text-align: center;
@@ -88,11 +70,12 @@
   font-size: 12px;
   cursor: pointer;
   border-radius: 4px;
+  width: 50px;
+  margin-bottom: 4px;
   transition: background-color 0.3s ease;
 }
 
-.button-disminuir:hover {
-  background-color: #FFB366;
+input:hover {
+  background-color: #cc2d89;
 }
-
-/* Agrega estilos adicionales según sea necesario */
+/* cataleg.component.css */

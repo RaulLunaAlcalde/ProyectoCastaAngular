@@ -1,9 +1,27 @@
 <!-- cataleg.component.html -->
 
 <app-menu></app-menu>
+<div>
+  <label>Filtrar por:</label>
+  <select [(ngModel)]="categoriaSeleccionada" (change)="filtrarPorCategoria()">
+    <option value="Todas">Todas</option>
+    <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+  </select>
+</div>
+<div>
+  <label>Ordenar por:</label>
+  <select [(ngModel)]="ordenSeleccionado" (change)="cambiarOrden(ordenSeleccionado)">
+    <option value="default">Por defecto</option>
+    <option value="precioAsc">Precio (ascendente)</option>
+    <option value="precioDesc">Precio (descendente)</option>
+    <option value="alfabeticoAsc">Alfabético (ascendente)</option>
+    <option value="alfabeticoDesc">Alfabético (descendente)</option>
+    <option value="categoria">Categoría</option>
+  </select>
+</div>
 
 <div class="catalogo-wrapper">
-  <div *ngFor="let producto of productos" class="columna">
+  <div *ngFor="let producto of productos" class="columna" [hidden]="producto.categoria !== categoriaSeleccionada && categoriaSeleccionada !== 'Todas'">
     <div class="producto">
       <img [src]="producto.imagen" alt="{{ producto.nombre }}">
       <p>{{ producto.descripcion }}</p>

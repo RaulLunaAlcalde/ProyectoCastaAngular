@@ -1,126 +1,59 @@
-/* Inicio menu */
-body {
-  font-family: Gabarito; /* Usar la fuente adecuada aquí*/
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-h1 a {
-  text-decoration: none;
-  color: white;
-  font-family: Gabarito;
-  &:hover {
-    text-decoration: none;
-    color: #dc821e;
-  }
-}
-
-h2 {
-  color: #C3896E;
-}
-
-.menu-bar {
-  background-color: #4F5D69; /* Azul pastel claro */
-  color: #fff; /* Color de letra blanco */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-
-  /* Sección izquierda (Título) */
-  .left-section {
-    margin-right: 20px;
-  }
-
-  /* Sección central (Enlaces) */
-  .center-section {
-    & ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-
-      & li {
-        margin-right: 70px; /* Aumentamos el espacio entre los elementos */
-        &:last-child {
-          margin-right: 0; /* Dejamos el último elemento sin espacio derecho */
-        }
-
-        & a {
-          text-decoration: none;
-          color: #fff;
-          font-weight: bold;
-          transition: color 0.3s; /* Agregamos una transición de color suave */
-          &:hover {
-            color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
-          }
-        }
-      }
-    }
-  }
-
-  /* Sección derecha (Botón de inicio de sesión) */
-  .right-section {
-    .login-button {
-      background-color: transparent;
-      text-decoration: none;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s; /* Agregamos una transición de color suave */
-      &:hover {
-        color: #dc821e; /* Cambia el color del texto al pasar el cursor por encima */
-      }
-      & i {
-        margin-right: 5px;
-      }
-    }
-  }
-}
-/*fin menu*/
-
 #body2 {
   padding-left: 3em;
   & p {
     width: 98%;
     flex: 1;
+
   }
   #cistella {
     text-align: center;
     margin-bottom: 2em;
   }
 }
-
-/* FOOTER */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+h2 {
+  color: #C3896E;
+}
+.precioTotal{
+  font-weight: bold;
+}
+.productos{
+  font-size: 20px;
+}
+.disminuir,
+.retirar {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 16px;
   text-align: center;
-  margin-top: 5em;
-  align-items: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.disminuir:hover{
+  background-color: #FF0000FF;
+}
+.retirar:hover{
+  background-color: #FF0000FF;
+}
+.button-comprar {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
 
-  /* Estilo para los iconos */
-  .footer-icons {
-    font-size: 24px;
-    margin: 10px;
-  }
-
-  /* Estilo para los enlaces de redes sociales */
-  .footer-social {
-    & a {
-      color: #fff;
-      text-decoration: none;
-      margin: 10px;
-      & i {
-        color: white;
-        text-decoration: none;
-      }
-    }
-  }
+.button-comprar:hover {
+  background-color: #FF0000FF;
 }

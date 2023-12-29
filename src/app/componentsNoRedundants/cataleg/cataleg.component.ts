@@ -6,13 +6,17 @@ import {FormsModule} from "@angular/forms";
 import {NgForOf} from "@angular/common";
 import {CarritoService} from "../../carrito.service";
 
+// cataleg.component.ts
 interface Producto {
   nombre: string;
   descripcion: string;
   imagen: string;
   precio: number;
   cantidad: number;
+  categoria: string;
+  subcategoria: string;
 }
+
 @Component({
   selector: 'app-cataleg',
   standalone: true,
@@ -27,19 +31,27 @@ interface Producto {
 })
 export class CatalegComponent {
   productos: Producto[] = [
-    { nombre: 'Producto 1', descripcion: 'Descripción del Producto 1', imagen: 'assets/CastaEscudo.png', precio: 14, cantidad: 1 },
-    { nombre: 'Producto 2', descripcion: 'Descripción del Producto 2', imagen: 'assets/CastaEscudo.png', precio: 12, cantidad: 1 },
-    { nombre: 'Producto 3', descripcion: 'Descripción del Producto 3', imagen: 'assets/CastaEscudo.png', precio: 6, cantidad: 1 },
-    { nombre: 'Producto 4', descripcion: 'Descripción del Producto 4', imagen: 'assets/CastaEscudo.png', precio: 18, cantidad: 1 },
-    { nombre: 'Producto 5', descripcion: 'Descripción del Producto 5', imagen: 'assets/CastaEscudo.png', precio: 10, cantidad: 1 },
-    { nombre: 'Producto 6', descripcion: 'Descripción del Producto 6', imagen: 'assets/CastaEscudo.png', precio: 25, cantidad: 1 },
+    { nombre: 'Camiseta Larga', descripcion: 'Camiseta Larga', imagen: 'assets/CastaEscudo.png', precio: 14, cantidad: 1, categoria: "Camiseta", subcategoria: "Larga" },
+    { nombre: 'Camiseta Corta', descripcion: 'Camiseta Corta', imagen: 'assets/CastaEscudo.png', precio: 12, cantidad: 1, categoria: "Camiseta", subcategoria: "Corta" },
+    { nombre: 'Camiseta Tirantes', descripcion: 'Camiseta Tirantes', imagen: 'assets/CastaEscudo.png', precio: 6, cantidad: 1, categoria: "Camiseta", subcategoria: "Tirantes" },
+    { nombre: 'Pantalones Largos', descripcion: 'Pantalones Largos', imagen: 'assets/CastaEscudo.png', precio: 18, cantidad: 1, categoria: "Pantalones", subcategoria: "Largos" },
+    { nombre: 'Pantalones Cortos', descripcion: 'Pantalones Cortos', imagen: 'assets/CastaEscudo.png', precio: 10, cantidad: 1, categoria: "Pantalones", subcategoria: "Cortos" },
+    { nombre: 'Pantalones Bermudas', descripcion: 'Pantalones Bermudas', imagen: 'assets/CastaEscudo.png', precio: 25, cantidad: 1, categoria: "Pantalones", subcategoria: "Bermudas" },
     // Agrega más productos si es necesario
   ];
+  ordenSeleccionado: string = 'default';
+  categorias: string[] = [];
+  subcategorias: string[] = [];
+  categoriaSeleccionada: string = 'Todas';
 
-  constructor(private router: Router, private carritoService: CarritoService) {}
+  constructor(private router: Router, private carritoService: CarritoService) {
+    this.obtenerCategorias();
+    this.obtenerSubcategorias();
+    this.ordenarProductos();
+  }
 
   agregarACarrito(producto: Producto) {
-    this.carritoService.agregarAlCarrito({ nombre: producto.nombre, cantidad: producto.cantidad, precio: producto.precio });
+    this.carritoService.agregarAlCarrito({ nombre: producto.nombre, cantidad: producto.cantidad, precio: producto.precio, imagen:producto.imagen });
   }
 
   validarCantidad(event: any) {
@@ -51,5 +63,43 @@ export class CatalegComponent {
       // Por ejemplo, puedes establecer la cantidad a 1 por defecto
       event.target.value = '1';
     }
+  }cambiarOrden(orden: string) {
+    this.ordenSeleccionado = orden;
+    this.ordenarProductos();
+  }
+
+  ordenarProductos() {
+    switch (this.ordenSeleccionado) {
+      case 'precioAsc':
+        this.productos.sort((a, b) => a.precio - b.precio);
+        break;
+      case 'precioDesc':
+        this.productos.sort((a, b) => b.precio - a.precio);
+        break;
+      case 'alfabeticoAsc':
+        this.productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        break;
+      case 'alfabeticoDesc':
+        this.productos.sort((a, b) => b.nombre.localeCompare(a.nombre));
+        break;
+      case 'categoria':
+        this.productos.sort((a, b) => a.categoria.localeCompare(b.categoria) || a.subcategoria.localeCompare(b.subcategoria));
+        break;
+      default:
+        // Orden por defecto (puedes ajustar según tus necesidades)
+        this.productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        break;
+    }
+  }
+
+  obtenerCategorias() {
+    this.categorias = Array.from(new Set(this.productos.map(producto => producto.categoria)));
+  }
+
+  obtenerSubcategorias() {
+    this.subcategorias = Array.from(new Set(this.productos.map(producto => producto.subcategoria)));
+  }
+  filtrarPorCategoria() {
+    this.ordenarProductos();
   }
 }

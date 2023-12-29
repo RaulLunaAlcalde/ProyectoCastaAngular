@@ -1,13 +1,18 @@
 <app-menu></app-menu>
 <div id="body2">
   <h2>Productos en la Cesta</h2>
-  <div *ngFor="let producto of productosEnCarrito">
-    <p>
-      {{ producto.nombre }} - Cantidad: {{ producto.cantidad }} - Precio: {{ producto.precio * producto.cantidad }} €
-      <!-- Botones para retirar o disminuir la cantidad -->
-      <button (click)="disminuirCantidad(producto)">Disminuir cantidad</button>
-      <button (click)="retirarDelCarrito(producto)">Retirar del carrito</button>
-    </p>
+  <div *ngIf="mostrarProductos">
+    <div *ngFor="let producto of productosEnCarrito">
+      <p>
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" style="max-width: 50px;">
+        {{ producto.nombre }} - Cantidad: {{ producto.cantidad }} - Precio: {{ producto.precio * producto.cantidad }} €
+        <!-- Botones para retirar o disminuir la cantidad -->
+        <button class="disminuir" (click)="disminuirCantidad(producto)">Disminuir cantidad</button>
+        <button class="retirar" (click)="retirarDelCarrito(producto)">Retirar del carrito</button>
+      </p>
+    </div>
+    <p>Precio Total: {{ calcularPrecioTotal() }} €</p>
   </div>
+  <button (click)="comprar()" *ngIf="mostrarProductos" class="button-comprar">Comprar</button>
 </div>
 <app-footer></app-footer>
